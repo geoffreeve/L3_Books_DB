@@ -4,18 +4,25 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Put Content Here">
-    <meta name="keywords" content="Put keywords here">
-    <meta name="author" content="Put your name here">
+    <meta name="description" content="Creative Commons Showcase">
+    <meta name="keywords" content="Creative Commons, images, gallery">
+    <meta name="author" content="Geoffrey Reeves">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Website Title goes here</title>
+    <title>Creative Commons Showcase</title>
     
     <!-- Edit the link below / replace with your chosen google font -->
     <link href="https://fonts.googleapis.com/css?family=Lato%7cUbuntu" rel="stylesheet"> 
     
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/simple-lightbox.css" />
+
     <!-- Edit the name of your style sheet - 'foo' is not a valid name!! -->
-    <link rel="stylesheet" href="layout.css"> 
+    <link rel="stylesheet" href="css/layout.css"> 
+    <link rel="stylesheet" href="css/navigation.css"/>
+
+    <!-- Link to JQuery -->
+    <script src="js/j_query_min.js"></script>
     
 </head>
     
@@ -23,13 +30,40 @@
     
     <div class="wrapper">
     
+    <div class="logo">
+        <img class="responsive" src="images/sphere_logo.png"
+        alt="s" />
+    </div> <!-- logo -->
 
-        <div class="banner">
-            Banner goes here
-        </div>
+    <div class="top-title">
+        <h2>CC Showcase</h2>
+    </div> <!-- top title -->
 
-        <div class="box nav">
-            Navigation goes here
+        <div class="header">
+            <div class="menu-header">
+
+                <i class="fa fa-bars"></i>
+
+                <div class="menu-content">
+                    <ul>
+                        <li><a href="#">Home</a></li>   
+                        <li><a class="dropbtn" href="#">Gallery<i 
+                        class="fa fa-chevron-down"></i></a>
+                            <ul class="dropdown">
+                                <li><a href="#">Insects</a></li>
+                                <li><a href="#">Space</a></li>
+                                <li><a href="#">People</a></li>
+                            </ul>
+
+                        </li> <!-- Gallery Dropdown -->
+
+
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Links</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
         <div class = "box main">
@@ -43,4 +77,19 @@
     
     </div>  <!-- / wrapper  -->
     
+<script>
+    $('.dropbtn').click(function()
+        {
+            $('.dropdown').toggleClass('display');
+        }
+    )
+
+    // Make navigation button clickable
+
+    $('.fa-bars').click(function()
+    {
+        $('.menu-content').toggle();
+    })
+</script>
+
 </body>        
