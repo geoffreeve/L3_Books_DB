@@ -30,78 +30,51 @@
     
     <div class="wrapper">
     
-    <div class="logo">
-        <img class="responsive" src="images/sphere_logo.png"
-        alt="s" />
-    </div> <!-- logo -->
+        <div class="logo">
+            <a href="index.php"><img class="responsive" src="images/sphere_logo.png"
+            alt="s" /></a>
+        </div> <!-- logo -->
 
-    <div class="top-title">
-        <h2>CC Showcase</h2>
-    </div> <!-- top title -->
+        <div class="top-title">
+            <h2>CC Showcase</h2>
+        </div> <!-- top title -->
 
-        <div class="header">
-            <div class="menu-header">
+            <div class="header">
+                <div class="menu-header">
 
-                <i class="fa fa-bars"></i>
+                    <i class="fa fa-bars"></i>
 
-                <div class="menu-content">
-                    <ul>
-                        <li><a href="#">Home</a></li>   
-                        <li><a class="dropbtn" href="#">Gallery<i 
-                        class="fa fa-chevron-down"></i></a>
-                            <ul class="dropdown">
-                                <li><a href="#">Insects</a></li>
-                                <li><a href="#">Space</a></li>
-                                <li><a href="#">People</a></li>
-                            </ul>
+                    <div class="menu-content">
+                        <ul>
+                            <li><a href="index.php">Home</a></li>   
+                            <li><a class="dropbtn" href="#">Gallery<i 
+                            class="fa fa-chevron-down"></i></a>
+                                <ul class="dropdown">
+                                    <li><a href="#">Insects</a></li>
+                                    <li><a href="#">Space</a></li>
+                                    <li><a href="#">People</a></li>
+                                </ul>
+                            </li> <!-- Gallery Dropdown -->
 
-                        </li> <!-- Gallery Dropdown -->
-
-
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Links</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
+                            <li><a href="#">About</a></li>
+                            <li><a href="index.php?page=links">Links</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="box main">
-        <div class="info-text">
-            <h2>Creative Commons - The Mission!</h2>
-            <p>
-                Creative Commons gives content creators and consumers a way to share 
-                works without needing to grant permission for work to be used each time.
-            </p>
+        <?php
 
-            <p>
-                The goal of creative commons is to "overcome legal obstacles to the sharing of knowledge and creativity to address the world’s pressing challenges". 
-                You can learn more about <a href="https://creativecommons.org">Creative Commons</a> at the preceding link.
-            </p>
+        if (!isset($_REQUEST['page'])) {
+            include("home.php");
+        } else {
+            // Prevents users from navigating through file system
+            $page=preg_replace('/[^0-9a-zA-Z]-/', '', $_REQUEST['page']);
+            include("$page.php");
+        }
 
-            <p>
-                It is easy to <a href="https://creativecommons.org/share-your-work">share your work</a> by choosing a 
-                suitable license and then putting the license information on the work. 
-                Standard abbreviations seen in CC licenses are...
-            </p>
-
-            <ul class="text">
-                <li>SA (share alike)</li>
-                <li>BY (attribution required)</li>
-                <li>NC (non-commercial)</li>
-            </ul>
-            <p>
-                Many government organisations and Schools in New Zealand are Creative Commons organisations. 
-                This means that work created by employees will be CC licensed.
-            </p>
-                
-            <p>
-                Please vist the links page to find sources of CC works and 
-                tools for correctly attributing these materials.
-            </p>
-        </div> <!-- info text div -->
-        </div>  <!-- main div -->
-       
+        ?>
 
         <div class="box footer">
             CC yourname 20XX
